@@ -12,4 +12,8 @@ router.get('/private', routeGuard, (req, res, next) => {
   res.render('private');
 });
 
+router.get('/creators', (req, res, next) => {
+  res.render('creators');
+});
+
 module.exports = router;

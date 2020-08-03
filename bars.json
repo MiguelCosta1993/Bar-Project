@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Test",
+    "address": "rua de São Paulo 45",
+    "genre": "Cocktail-Bar",
+    "Location": {
+      "coordinates": ["30", "15"]
+    },
+    "image": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80",
+    "rating": 9.5,
+    "description": "É espectacular, cheio de gente gira, boa música, bom ambiente",
+    "cost": 20
+  },
+
+  {
+    "name": "Cinco Lounge",
+    "address": "Rua Rúben A. Leitão 17A",
+    "genre": "Cocktail-Bar",
+    "Location": {
+      "coordinates": ["38.714351", "-9.149674"]
+    },
+    "image": "https://www.cincolounge.com/image/2/1800/0/5/fff/uploads/media/dsc_7732_9762-1521406739.jpg",
+    "rating": 9,
+    "description": "Bar de luxo com aspeto internacional moderno e menu de bebidas impressionante, com cursos de cocktails.",
+    "cost": 15
+  },
+
+  {
+    "name": "Cinco Lounge 2",
+    "address": "Rua Rúben A. Leitão 17A",
+    "genre": "Cocktail-Bar",
+    "Location": {
+      "coordinates": ["38.714351", "-9.149674"]
+    },
+    "image": "https://www.cincolounge.com/image/2/1800/0/5/fff/uploads/media/dsc_7732_9762-1521406739.jpg",
+    "rating": 9,
+    "description": "Bar de luxo com aspeto internacional moderno e menu de bebidas impressionante, com cursos de cocktails.",
+    "cost": 15
+  }
+]

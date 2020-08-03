@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true
   },
-  type: {
+  genre: {
     type: String,
     enum: [
       'Rooftop-Bar',
@@ -34,7 +34,12 @@ const schema = new mongoose.Schema({
         max: 180
       }
     ]
-  }
+  },
+  image: String,
+  imageId: String,
+  rating: Number,
+  description: String,
+  cost: Number
 });
 
 module.exports = mongoose.model('Bars', schema);
