@@ -17,19 +17,7 @@ const upload = multer({ storage });
 barRouter.get('/create', routeGuard, (req, res, next) => {
   res.render('bars/create');
 });
-<<<<<<< HEAD
-barRouter.post('/create', routeGuard, (req, res, next) => {
-  const genre = req.body.genre;
-  const name = req.body.name;
-  const address = req.body.address;
-  const image = req.body.image;
-  const rating = req.body.rating;
-  const cost = req.body.cost;
-  const latitude = req.body.latitude;
-  const longitude = req.body.longitude;
-  const description = req.body.description;
 
-=======
 barRouter.post(
   '/create',
   upload.single('image'),
@@ -38,13 +26,12 @@ barRouter.post(
     const name = req.body.name;
     const address = req.body.address;
     const genre = req.body.genre;
-    const latitude = req.body.latitude;
-    const longitude = req.body.longitude;
-    const image = req.body.image;
-    const rating = req.body.rating;
+    const latitude = Number(req.body.latitude);
+    const longitude = Number(req.body.longitude);
+    const image = req.file.path;
+    const rating = Number(req.body.rating);
     const description = req.body.description;
-    const cost = req.body.cost;
->>>>>>> 4b9cfcf71e8c757a9c16e79693a5b620236234ec
+    const cost = Number(req.body.cost);
 
     Bar.create({
       name,
@@ -86,10 +73,6 @@ barRouter.get('/barsingle/:barId', (req, res, next) => {
     });
 });
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4b9cfcf71e8c757a9c16e79693a5b620236234ec
 barRouter.get('/barmap', (req, res, next) => {
   res.render('barmap');
 });
