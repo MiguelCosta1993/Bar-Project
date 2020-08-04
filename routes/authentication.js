@@ -7,10 +7,12 @@ const User = require('./../models/user');
 
 const router = new Router();
 
+//SIGNUP GET
 router.get('/sign-in', (req, res, next) => {
   res.render('sign-in');
 });
 
+//SIGNUPPOST
 router.post('/sign-in', (req, res, next) => {
   const { name, email, password } = req.body;
   bcryptjs
@@ -24,17 +26,19 @@ router.post('/sign-in', (req, res, next) => {
     })
     .then(user => {
       req.session.user = user._id;
-      res.redirect('/private');
+      res.redirect('/authentication/sign-in');
     })
     .catch(error => {
       next(error);
     });
 });
 
+//SIGNINGET
 router.get('/sign-in', (req, res, next) => {
   res.render('sign-in');
 });
 
+//SIGNIN POST
 router.post('/sign-in', (req, res, next) => {
   let user;
   const { email, password } = req.body;
