@@ -4,12 +4,10 @@ const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
   name: {
-    type: String,
-    require: true
+    type: String
   },
   address: {
-    type: String,
-    required: true
+    type: String
   },
   genre: {
     type: String,
@@ -19,7 +17,7 @@ const schema = new mongoose.Schema({
       'Club-Bar',
       'Hotel-Bar',
       'Cocktail-Bar',
-      'Platic-Bar'
+      'Plastic-Bar'
     ]
   },
   location: {
@@ -36,7 +34,6 @@ const schema = new mongoose.Schema({
     ]
   },
   image: String,
-  imageId: String,
   rating: Number,
   description: String,
   cost: Number

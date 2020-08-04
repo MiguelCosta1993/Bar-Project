@@ -1,0 +1,55 @@
+<h1>Add a bar</h1>
+
+<form action="" method="POST">
+<p><label for="type">Select bar type:</label>
+<select name="type">
+  <option value="Rooftop-Bar">Rooftop Bar</option>
+  <option value="Sports-Bar">Sports Bar</option>
+  <option value="Club-Bar">Club Bar</option>
+  <option value="Hotel-Bar">Hotel Bar</option>
+  <option value="Cocktail-Bar">Cocktail Bar</option>
+  <option value="Plastic-Bar">Plastic Bar</option>
+</select>
+</p>
+<label for="place-name">Name of the place:</label>
+<input type="text" name="name" placeholder="Place name"></input>
+<label for="latitude-input">Latitude:</label>
+<input type="text" name="latitude" placeholder="Input Latitude"></input>
+<label for="longitude-input">Longitude:</label>
+<input type="text" name="longitude" placeholder="Input Longitude"></input>
+<p style= "text-align: center"><button>Add place</button></p>
+</form>
+
+<script>
+  function init () {
+    const mapContainerElement = document.getElementById('map-container');
+    const map = new window.google.maps.Map(mapContainerElement, {
+      center: {
+        lat: 38.75,
+        lng: -9.15
+      },
+      zoom: 11
+    });
+    let marker;
+    const latitudeInputElement = document.getElementById('latitude-input');
+    const longitudeInputElement = document.getElementById('longitude-input');
+    map.addListener('click', event => {
+      const latitude = event.latLng.lat();
+      const longitude = event.latLng.lng();
+      if (marker) {
+        marker.setMap(null);
+      }
+      marker = new window.google.maps.Marker({
+        map,
+        position: {
+          lat: latitude,
+          lng: longitude
+        }
+      });
+      latitudeInputElement.value = latitude;
+      longitudeInputElement.value = longitude;
+    });
+  }
+</script>
+
+{{!-- {{> mapscript}} --}}
