@@ -5,9 +5,19 @@ const Bar = require('../models/bars');
 const barRouter = new express.Router();
 const routeGuard = require('./../middleware/route-guard');
 
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const multerStorageCloudinary = require('multer-storage-cloudinary');
+
+const storage = new multerStorageCloudinary.CloudinaryStorage({
+  cloudinary: cloudinary.v2
+});
+const upload = multer({ storage });
+
 barRouter.get('/create', routeGuard, (req, res, next) => {
   res.render('bars/create');
 });
+<<<<<<< HEAD
 barRouter.post('/create', routeGuard, (req, res, next) => {
   const genre = req.body.genre;
   const name = req.body.name;
@@ -19,24 +29,41 @@ barRouter.post('/create', routeGuard, (req, res, next) => {
   const longitude = req.body.longitude;
   const description = req.body.description;
 
+=======
+barRouter.post(
+  '/create',
+  upload.single('image'),
+  routeGuard,
+  (req, res, next) => {
+    const name = req.body.name;
+    const address = req.body.address;
+    const genre = req.body.genre;
+    const latitude = req.body.latitude;
+    const longitude = req.body.longitude;
+    const image = req.body.image;
+    const rating = req.body.rating;
+    const description = req.body.description;
+    const cost = req.body.cost;
+>>>>>>> 4b9cfcf71e8c757a9c16e79693a5b620236234ec
 
-  Bar.create({
-    name,
-    address,
-    genre,
-    location: { coordinates: [latitude, longitude] },
-    image,
-    rating,
-    description,
-    cost
-  })
-    .then(() => {
-      res.redirect('/');
+    Bar.create({
+      name,
+      address,
+      genre,
+      location: { coordinates: [latitude, longitude] },
+      image,
+      rating,
+      description,
+      cost
     })
-    .catch(err => {
-      next(err);
-    });
-});
+      .then(() => {
+        res.redirect('/');
+      })
+      .catch(err => {
+        next(err);
+      });
+  }
+);
 
 barRouter.get('/barlist', (req, res, next) => {
   Bar.find()
@@ -59,7 +86,10 @@ barRouter.get('/barsingle/:barId', (req, res, next) => {
     });
 });
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b9cfcf71e8c757a9c16e79693a5b620236234ec
 barRouter.get('/barmap', (req, res, next) => {
   res.render('barmap');
 });
