@@ -16,11 +16,13 @@
       {{#if user}}
         <!-- <a href="/">{{user.name}}'s Profile</a> -->
         <form action="/authentication/sign-out" method="POST">
-          <a href="/private">User Profile</a>
+          <a href="/bar/create">Add a Bar</a>
+          <a href="/profile">User Profile</a>
           <button>Sign Out</button>
         </form>
         {{else}}
-        <a href="/authentication/sign-in">Sign In / Sign Up</a>
+        <a href="/authentication/sign-in">Sign In</a>
+        <a href="/authentication/sign-up">Sign Up</a>
       {{/if}}
     </nav>
     {{{body}}}

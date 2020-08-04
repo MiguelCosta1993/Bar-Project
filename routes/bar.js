@@ -1,16 +1,18 @@
 'use strict';
 
 const express = require('express');
-const Bar = require('../models/bar');
+const Bar = require('../models/bars');
 const barRouter = new express.Router();
+const routeGuard = require('./../middleware/route-guard');
 
-barRouter.get('/create', (req, res, next) => {
-  res.render('/bars/create');
+
+barRouter.get('/create', routeGuard, (req, res, next) => {
+  res.render('bars/create');
 });
-barRouter.post('/create', (req, res, next) => {
+barRouter.post('/create',routeGuard, (req, res, next) => {
   const name = req.body.name;
   const address = req.body.address;
-  const genre = req.body.address;
+  const genre = req.body.genre;
   const latitude = req.body.latitude;
   const longitude = req.body.longitude;
   const image = req.body.image;
@@ -18,7 +20,7 @@ barRouter.post('/create', (req, res, next) => {
   const description = req.body.description;
   const cost = req.body.cost;
 
-  Bar.creeate({
+  Bar.create({
     name,
     address,
     genre,
@@ -29,7 +31,7 @@ barRouter.post('/create', (req, res, next) => {
     cost
   })
     .then(() => {
-      res.redirect('/bars/barlist');
+      res.redirect('/');
     })
     .catch(err => {
       next(err);
