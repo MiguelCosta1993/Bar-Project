@@ -1,11 +1,11 @@
 'use strict';
 
 const express = require('express');
-const Bar = require('../models/bar');
+const Bar = require('../models/bars');
 const barRouter = new express.Router();
 
 barRouter.get('/create', (req, res, next) => {
-  res.render('/bars/create');
+  res.render('bars/create');
 });
 barRouter.post('/create', (req, res, next) => {
   const name = req.body.name;
@@ -18,7 +18,7 @@ barRouter.post('/create', (req, res, next) => {
   const description = req.body.description;
   const cost = req.body.cost;
 
-  Bar.creeate({
+  Bar.create({
     name,
     address,
     genre,
