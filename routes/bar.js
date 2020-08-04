@@ -9,15 +9,16 @@ barRouter.get('/create', routeGuard, (req, res, next) => {
   res.render('bars/create');
 });
 barRouter.post('/create', routeGuard, (req, res, next) => {
+  const genre = req.body.genre;
   const name = req.body.name;
   const address = req.body.address;
-  const genre = req.body.genre;
-  const latitude = req.body.latitude;
-  const longitude = req.body.longitude;
   const image = req.body.image;
   const rating = req.body.rating;
-  const description = req.body.description;
   const cost = req.body.cost;
+  const latitude = req.body.latitude;
+  const longitude = req.body.longitude;
+  const description = req.body.description;
+
 
   Bar.create({
     name,
@@ -58,22 +59,6 @@ barRouter.get('/barsingle/:barId', (req, res, next) => {
     });
 });
 
-// postRouter.get('/:id', (request, response, next) => {
-//   const id = request.params.id;
-
-//   Post.findById(id)
-//     .populate('creator')
-//     .then(post => {
-//       if (post) {
-//         response.render('post/single', { post: post });
-//       } else {
-//         next();
-//       }
-//     })
-//     .catch(error => {
-//       next(error);
-//     });
-// });
 
 barRouter.get('/barmap', (req, res, next) => {
   res.render('barmap');
