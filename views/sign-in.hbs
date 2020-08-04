@@ -8,7 +8,15 @@
 </form>
 <hr>
 
-<h1>SIGN UP</h1>
+
+
+<p>
+  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+   Sign Up (Click here)
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
 <form action="/authentication/sign-up" method="POST">
   <label for="input-name">Name</label>
   <input type="text" id="input-name" name="name" placeholder="Your Name" />
@@ -16,5 +24,15 @@
   <input type="email" id="input-email" name="email" placeholder="Your Email" />
   <label for="input-password">Password</label>
   <input type="password" name="password" id="input-password" placeholder="A Strong Password" />
+  <label for="input-admin">Admin Code (only if admin)</label>
+ 	<input type="text" id="inputAdminCode" class="form-control" name="adminCode" />
   <button>Sign Up</button>
-</form>
+</form>  </div>
+</div>
+
+
+
+
+
+ 
+

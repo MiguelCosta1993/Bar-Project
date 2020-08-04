@@ -14,8 +14,13 @@ const schema = new mongoose.Schema({
   passwordHash: {
     type: String
   },
+  isAdmin: {
+    type: Boolean, 
+    default: false
+  },
   image: String,
   bio: String
+
 });
 
 module.exports = mongoose.model('User', schema);
