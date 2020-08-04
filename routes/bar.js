@@ -49,14 +49,31 @@ barRouter.get('/barlist', (req, res, next) => {
 
 barRouter.get('/barsingle/:barId', (req, res, next) => {
   const barId = req.params.barId;
-  Bar.findbyId({ _id: barId })
+  Bar.findById(barId)
     .then(bar => {
-      res.render('bars/barsingle', { bar });
+      res.render('bars/barsingle', { bar: bar });
     })
     .catch(err => {
       next(err);
     });
 });
+
+// postRouter.get('/:id', (request, response, next) => {
+//   const id = request.params.id;
+
+//   Post.findById(id)
+//     .populate('creator')
+//     .then(post => {
+//       if (post) {
+//         response.render('post/single', { post: post });
+//       } else {
+//         next();
+//       }
+//     })
+//     .catch(error => {
+//       next(error);
+//     });
+// });
 
 barRouter.get('/barmap', (req, res, next) => {
   res.render('barmap');
