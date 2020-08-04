@@ -44,7 +44,7 @@ barRouter.post(
       cost
     })
       .then(() => {
-        res.redirect('/');
+        res.redirect('/bar/create');
       })
       .catch(err => {
         next(err);
