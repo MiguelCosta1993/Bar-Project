@@ -4,11 +4,8 @@ const { Router } = require('express');
 
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
-<<<<<<< HEAD
 const routeGuard = require('./../middleware/route-guard');
 
-=======
->>>>>>> 9464497cfd4ad2bcd85b313b8cce634bbca409e2
 const router = new Router();
 
 router.get('/sign-up', (req, res, next) => {
