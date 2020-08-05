@@ -1,0 +1,16 @@
+<h1>Bar List</h1>
+ {{#each bars}}
+ <div>
+ <a href="barsingle/{{id}}">
+    <h3>{{name}}</h3>
+    <p><img src="{{image}}" alt=""></p>
+    <p>Type of Bar: {{barType}}</p>
+    <p>Address: {{address}}</p>
+    <p>Rating:{{rating}}</p>
+    <p>Description:{{description}}</p> 
+    <p>Average cost per drink: {{cost}} € </p></a>
+ </div>
+ {{/each}}
+   
+   
+<p style= "text-align: center"><a href="create"><button>Add a new bar</button></a></p>

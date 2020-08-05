@@ -55,8 +55,7 @@ barRouter.post(
 
 //BAR LIST
 barRouter.get('/barlist', (req, res, next) => {
-  const token = req.query.token;
-  Bar.find({ barType: token })
+  Bar.find()
     .then(bars => {
       res.render('bars/barlist', { bars });
     })
@@ -65,13 +64,24 @@ barRouter.get('/barlist', (req, res, next) => {
     });
 });
 
-barRouter.post('/barlist', (req, res, next) => {
+barRouter.get('/barfilter', (req, res, next) => {
+  const token = req.query.token;
+  Bar.find({ barType: token })
+    .then(bars => {
+      res.render('bars/barfilter', { bars });
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+barRouter.post('/barfilter', (req, res, next) => {
   const { barType } = req.body;
 
   Bar.find({ barType: barType })
     .then(bars => {
       console.log(bars);
-      res.redirect(`/bars/barlist?token=${barType}`);
+      res.redirect(`/bar/barfilter?token=${barType}`);
     })
     .catch(err => {
       next(err);
