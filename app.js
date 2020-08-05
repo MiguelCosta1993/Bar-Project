@@ -10,6 +10,7 @@ const expressSession = require('express-session');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const hbs = require('hbs');
+const hbsJsonHelper = require('hbs-json');
 const serveFavicon = require('serve-favicon');
 const basicAuthenticationDeserializer = require('./middleware/basic-authentication-deserializer.js');
 const bindUserToViewLocals = require('./middleware/bind-user-to-view-locals.js');
@@ -23,6 +24,7 @@ app.set('views', join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerHelper('json', hbsJsonHelper);
 
 app.use(serveFavicon(join(__dirname, 'public/images', 'favicon.ico')));
 app.use(express.static(join(__dirname, 'public')));
@@ -48,6 +50,11 @@ app.use(
 );
 app.use(basicAuthenticationDeserializer);
 app.use(bindUserToViewLocals);
+
+app.use((req, res, next) => {
+  res.locals.environmentVariables = process.env;
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/authentication', authenticationRouter);
