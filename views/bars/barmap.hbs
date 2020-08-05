@@ -3,17 +3,17 @@
 <div id="map-container"></div>
 
 <script>
-  function init () {
+  function init() {
     const mapContainerElement = document.getElementById('map-container');
     const map = new window.google.maps.Map(mapContainerElement, {
       center: {
-        lat: {{ bar.location.coordinates.[0] }},
-        lng: {{ bar.location.coordinates.[1] }}
+        lat: 38.712783,
+        lng: -9.138872
       },
-      zoom: 11
+      zoom: 13
     });
-     const latitude = {{ bar.location.coordinates.[0] }};
-    const longitude= {{ bar.location.coordinates.[1] }};
+    const latitude = {{ bars.[0].location.coordinates.[0] }};
+    const longitude = {{ bars.[0].location.coordinates.[1] }};
     const marker = new window.google.maps.Marker({
       map,
       position: {
