@@ -5,12 +5,22 @@
 }
 
 body {
-  max-width: 52em;
-  padding: 0 1em;
+  
   margin: 0 auto;
   font-family: sans-serif;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   line-height: 2;
+}
+
+.index {
+max-width: 52em; 
+padding: 0 1em;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: auto;
+
+
 }
 
 a {
@@ -21,23 +31,33 @@ a {
 nav {
   display: flex;
   color: white;
+  
+
 }
 
 nav img {
-  width: 200px;
-  height: 100px;
+padding-left: 3vw;
 }
 
 .navbar-custom {
   background-color: black;
-  width: 100% !important;
+  height: 10vh;
 }
 
+.navbarlinks {
+  padding-top: 3vh;
+  padding-right: 2.5vw;
+}
 
 nav a,
 nav button {
   padding: 1em 0;
   border: 0;
+}
+
+nav a:hover{
+  text-decoration: none;
+  color: #f03294;
 }
 nav a:not(:last-child),
 nav button:not(:last-child) {

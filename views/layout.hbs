@@ -8,24 +8,24 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    
-    <nav class="navbar-custom">
-     <a href="/"><img src="https://i.ibb.co/K9XRTpF/barboozle-Logo.png" alt=""></a>
-      <a href="/bar/barlist">Show Bars</a>
-      <a href="/bar/barmap">Show Map</a>
+    <!-- OUR NAV -->
+    <nav class="navbar-custom navbar-collapse">
+     <a href="/"><img src="https://i.ibb.co/ChrTFKb/Untitled.png" alt=""></a>
+      <a class="navbarlinks" href="/bar/barlist">Show Bars</a>
+      <a class="navbarlinks" href="/bar/barmap">Show Map</a>
   
       {{#if user}}
-        <!-- <a href="/">{{user.name}}'s Profile</a> -->
         <form action="/authentication/sign-out" method="POST">
-          <a href="/bar/create">Add a Bar</a>
-          <a href="/profile">User Profile</a>
+          <a class="navbarlinks" href="/bar/create">Add a Bar</a>
+          <a class="navbarlinks" href="/profile">User Profile</a>
           <button>Sign Out</button>
         </form>
         {{else}}
-        <a href="/authentication/sign-in">Sign In</a>
-        <a href="/authentication/sign-up">Sign Up</a>
+        <a class="navbarlinks" href="/authentication/sign-in">Sign In</a>
+        <a class="navbarlinks" href="/authentication/sign-up">Sign Up</a>
       {{/if}}
     </nav>
+  
     {{{body}}}
     
 
