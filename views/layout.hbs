@@ -18,12 +18,10 @@
       <ul class="navbar-nav mr-auto">
       <li class="nav-item"><a class="navbarlinks" href="/bar/barlist">Show Bars</a></li>
       <li class="nav-item"><a class="navbarlinks" href="/bar/barmap">Show Map</a></li>
-   
-  
       {{#if user}}
         <form action="/authentication/sign-out" method="POST">
-          <li class="nav-item"><a class="navbarlinks" href="/bar/create">Add a Bar</a></li>
-          <li class="nav-item"><a class="navbarlinks" href="/profile">User Profile</a></li>
+          <li class="nav-item"><a class=" navbarlinks" href="/bar/create">Add a Bar</a></li>
+          <li class="nav-item"><a class=" navbarlinks" href="/profile">User Profile</a></li>
           <button>Sign Out</button>
         </form>
         {{else}}
@@ -32,6 +30,8 @@
       {{/if}}
        </ul>
     </nav>
+
+    
   
     {{{body}}}
     

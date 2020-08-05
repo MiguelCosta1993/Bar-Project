@@ -41,13 +41,15 @@ padding-left: 3vw;
 
 .navbar-custom {
   background-color: black;
-  height: 10vh;
+  /* height: 10vh; */
 }
 
 .navbarlinks {
-  padding-top: 3vh;
-  padding-right: 2.5vw;
+  display:flex;
+  justify-content:space-evenly;
+  padding: 20px;
 }
+
 
 nav a,
 nav button {
@@ -87,7 +89,7 @@ img {
   max-width: 100%;
 }
 
-form {
+.createbar {
   display: flex;
   flex-direction: column;
 }
