@@ -64,7 +64,6 @@ barRouter.get('/barlist', (req, res, next) => {
     });
 });
 
-
 barRouter.get('/barsingle/:barId', (req, res, next) => {
   const barId = req.params.barId;
   Bar.findById(barId)
