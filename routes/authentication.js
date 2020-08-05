@@ -11,15 +11,23 @@ router.get('/sign-up', (req, res, next) => {
   res.render('authentication/sign-up');
 });
 
+
 router.post('/sign-up', (req, res, next) => {
-  const { name, email, password } = req.body;
+  const { name, email, password, adminCode } = req.body;
+  
+  let isAdmin = false;
+  if (adminCode === "1234") {
+    isAdmin = true;
+  }
+
   bcryptjs
     .hash(password, 10)
     .then(hash => {
       return User.create({
         name,
         email,
-        passwordHash: hash
+        passwordHash: hash,
+        isAdmin
       });
     })
     .then(user => {
