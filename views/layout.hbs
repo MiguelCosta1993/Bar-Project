@@ -8,8 +8,49 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    <!-- OUR NAV -->
-    <nav class="navbar-custom navbar-collapse navbar-expand-md mb-4">
+    <nav class="navbar-custom navbar-expand-md mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="/"><img class="logo" src="https://i.ibb.co/ChrTFKb/Untitled.png" alt=""></a>
+            <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+            </button>
+ 
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/bar/barlist">Show Bars</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/bar/barmap">Show Map</a>
+                    </li>
+                     {{#if user}}
+                      {{!-- <form class="nav-link scroll-link" action="/authentication/sign-out" method="POST"> --}}
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/bar/create">Add a Bar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/profile">User Profile</a>
+                    </li>
+                    <li><button class="nav-link scroll-link" >Sign Out</button></li>
+                     {{!-- </form> --}}
+                    {{else}}
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/authentication/sign-in">Sign In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="/authentication/sign-up">Sign Up</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+ 
+        </div>
+    </nav>
+ 
+
+    
+{{!-- NAV TEST END --}}
+  {{!-- <nav class="navbar-custom navbar-collapse navbar-expand-md mb-4">
      <a class="navbar-brand" href="/"><img src="https://i.ibb.co/ChrTFKb/Untitled.png" alt=""></a>
      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
    			 <span class="navbar-toggler-icon"></span>
@@ -29,47 +70,7 @@
         <li class="nav-item"><a class="navbarlinks" href="/authentication/sign-up">Sign Up</a></li>
       {{/if}}
        </ul>
-    </nav>
-
-
-
-{{!-- NAV TEST --}}
- <!-- Top menu -->
-    <nav class="navbar-custom navbar-expand-md mb-4">
-        <div class="container">
- 
-            <a class="navbar-brand" href="index.html">Bootstrap Hamburger Menu</a>
- 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon">|  |  |</span>
-            </button>
- 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#top-content">Top</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#section-1">Item 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#section-2">Item 2</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#section-3">Item 3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link scroll-link" href="#section-4">Item 4</a>
-                    </li>
-                </ul>
-            </div>
- 
-        </div>
-    </nav>
- 
-
-    
-{{!-- NAV TEST END --}}
+    </nav> --}}
 
     {{{body}}}
     

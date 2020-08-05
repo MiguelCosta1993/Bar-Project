@@ -1,3 +1,4 @@
+    <div class="index singlemap">
     <h1>BAR DETAILS</h1>
     <h3>Name: {{bar.name}}</h3>
     <p><img src="{{bar.image}}" alt=""></p>
@@ -5,10 +6,10 @@
     <p>Address: {{bar.address}}</p>
     <p>Rating:{{bar.rating}}</p>
     <p>Description:{{bar.description}}</p> 
-    <p>Average cost per drink: {{bar.cost}} € </p></a>
+    <p>Average cost per drink: {{bar.cost}} € </p>
 
 <div id="map-container"></div>
-
+</div>
 <script>
   function init () {
     const mapContainerElement = document.getElementById('map-container');
@@ -31,4 +32,3 @@
   }
 </script>
 {{>mapscript}}
-

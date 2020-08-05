@@ -17,4 +17,5 @@ router.get('/creators', (req, res, next) => {
   res.render('creators');
 });
 
+
 module.exports = router;

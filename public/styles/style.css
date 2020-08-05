@@ -5,7 +5,6 @@
 }
 
 body {
-  
   margin: 0 auto;
   font-family: sans-serif;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -35,19 +34,32 @@ nav {
 
 }
 
-nav img {
+/* nav img {
 padding-left: 3vw;
-}
+} */
 
 .navbar-custom {
   background-color: black;
   /* height: 10vh; */
 }
 
-.navbarlinks {
+
+/* .navbarlinks {
   display:flex;
+  flex-direction: row;
   justify-content:space-evenly;
   padding: 2vh;
+} */
+
+.custom-toggler.navbar-toggler {
+
+  float:right;
+  border-color: rgb(255,102,203);
+  color: rgb(255,102,203);
+} 
+
+.navbar-toggler:active{
+  outline: 0; 
 }
 
 
@@ -89,9 +101,20 @@ img {
   max-width: 100%;
 }
 
+/* creation forms */
 .createbar {
   display: flex;
   flex-direction: column;
+}
+
+.mapheader {
+  text-align:center;
+}
+
+
+.logo{
+  display:flex;
+  align-items: center;
 }
 
 input,
@@ -112,9 +135,19 @@ textarea {
   resize: vertical;
 }
 
+.collapse{
+  width:fit-content;
+  float: right;
+  padding-top: 1vh;
+}
+
 #map-container {
   height: 70vh;
-  width: 100%;
+  width: 90%;
   display: flex;
   margin-bottom: 5vh;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: 2px solid black;
+
 }
