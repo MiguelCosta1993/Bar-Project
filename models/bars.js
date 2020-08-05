@@ -9,7 +9,7 @@ const schema = new mongoose.Schema({
   address: {
     type: String
   },
-  genre: {
+  barType: {
     type: String,
     enum: [
       'Rooftop-Bar',

@@ -26,7 +26,7 @@ barRouter.post(
   (req, res, next) => {
     const name = req.body.name;
     const address = req.body.address;
-    const genre = req.body.genre;
+    const barType = req.body.barType;
     const latitude = parseFloat(Number(req.body.latitude));
     const longitude = parseFloat(Number(req.body.longitude));
     const image = req.file.path;
@@ -37,7 +37,7 @@ barRouter.post(
     Bar.create({
       name,
       address,
-      genre,
+      barType,
       location: { coordinates: [latitude, longitude] },
       image,
       rating,
@@ -55,9 +55,23 @@ barRouter.post(
 
 //BAR LIST
 barRouter.get('/barlist', (req, res, next) => {
-  Bar.find()
+  const token = req.query.token;
+  Bar.find({ barType: token })
     .then(bars => {
       res.render('bars/barlist', { bars });
+    })
+    .catch(err => {
+      next(err);
+    });
+});
+
+barRouter.post('/barlist', (req, res, next) => {
+  const { barType } = req.body;
+
+  Bar.find({ barType: barType })
+    .then(bars => {
+      console.log(bars);
+      res.redirect(`/bars/barlist?token=${barType}`);
     })
     .catch(err => {
       next(err);
