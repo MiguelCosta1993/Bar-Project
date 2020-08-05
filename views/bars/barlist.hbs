@@ -1,12 +1,25 @@
 <div id="map-container"></div>
 
+<form method="POST">
+  <Label>Type of Bar</Label>
+  <select name="barType">
+    <option value="Rooftop-bar">Rooftop-bar</option>
+    <option value="Sports-Bar">Sports-Barp</option>
+    <option value="Club-Bar">Club-Bar</option>
+    <option value="Hotel-Bar">Hotel-Bar</option>
+    <option value="Cocktail-Bar">Cocktail-Bar</option>
+    <option value="Plastic-Bar">Plastic-Bar</option>
+  </select>
+  <button>Search</button>
+</form>
+
 <h1>Bar List</h1>
  {{#each bars}}
  <div>
  <a href="barsingle/{{id}}">
     <h3>{{name}}</h3>
     <p><img src="{{image}}" alt=""></p>
-    <p>Type of Bar: {{genre}}</p>
+    <p>Type of Bar: {{barType}}</p>
     <p>Address: {{address}}</p>
     <p>Rating:{{rating}}</p>
     <p>Description:{{description}}</p> 
