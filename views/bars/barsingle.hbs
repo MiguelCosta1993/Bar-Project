@@ -5,8 +5,6 @@
     <p>Address: {{bar.address}}</p>
     <p>Rating:{{bar.rating}}</p>
     <p>Description:{{bar.description}}</p> 
-    <p>latitude: {{bar.location.coordinates.[0]}}</p>
-    <p>longitude:  {{bar.location.coordinates.[1]}}</p>
     <p>Average cost per drink: {{bar.cost}} € </p></a>
 
 <div id="map-container"></div>
@@ -16,32 +14,21 @@
     const mapContainerElement = document.getElementById('map-container');
     const map = new window.google.maps.Map(mapContainerElement, {
       center: {
-       lat: 43.77,
-        lng: 11.25
+        lat: {{ bar.location.coordinates.[0] }},
+        lng: {{ bar.location.coordinates.[1] }}
       },
       zoom: 11
     });
-    let marker;
-    const latitudeInputElement = document.getElementById('latitude-input');
-    const longitudeInputElement = document.getElementById('longitude-input');
-    map.addListener('click', event => {
-      const latitude = event.latLng.lat();
-      const longitude = event.latLng.lng();
-      if (marker) {
-        marker.setMap(null);
+     const latitude = {{ bar.location.coordinates.[0] }};
+    const longitude= {{ bar.location.coordinates.[1] }};
+    const marker = new window.google.maps.Marker({
+      map,
+      position: {
+        lat: latitude,
+        lng: longitude
       }
-      marker = new window.google.maps.Marker({
-        map,
-        position: {
-          lat: latitude,
-          lng: longitude
-        }
-      });
-      latitudeInputElement.value = latitude;
-      longitudeInputElement.value = longitude;
     });
   }
 </script>
-
-{{> mapscript}}
+{{>mapscript}}
 

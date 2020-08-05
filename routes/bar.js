@@ -14,6 +14,7 @@ const storage = new multerStorageCloudinary.CloudinaryStorage({
 });
 const upload = multer({ storage });
 
+//BAR CREATE
 barRouter.get('/create', routeGuard, (req, res, next) => {
   res.render('bars/create');
 });
@@ -26,12 +27,12 @@ barRouter.post(
     const name = req.body.name;
     const address = req.body.address;
     const genre = req.body.genre;
-    const latitude = Number(req.body.latitude);
-    const longitude = Number(req.body.longitude);
+    const latitude = parseFloat(Number(req.body.latitude));
+    const longitude = parseFloat(Number(req.body.longitude));
     const image = req.file.path;
-    const rating = Number(req.body.rating);
+    const rating = parseFloat(Number(req.body.rating));
     const description = req.body.description;
-    const cost = Number(req.body.cost);
+    const cost = parseFloat(Number(req.body.cost));
 
     Bar.create({
       name,
@@ -52,6 +53,7 @@ barRouter.post(
   }
 );
 
+//BAR LIST
 barRouter.get('/barlist', (req, res, next) => {
   Bar.find()
     .then(bars => {
@@ -61,6 +63,7 @@ barRouter.get('/barlist', (req, res, next) => {
       next(err);
     });
 });
+
 
 barRouter.get('/barsingle/:barId', (req, res, next) => {
   const barId = req.params.barId;
@@ -73,8 +76,15 @@ barRouter.get('/barsingle/:barId', (req, res, next) => {
     });
 });
 
+//BARMAP
 barRouter.get('/barmap', (req, res, next) => {
-  res.render('barmap');
+  Bar.find()
+    .then(bars => {
+      res.render('bars/barmap', { bars });
+    })
+    .catch(err => {
+      next(err);
+    });
 });
 
 module.exports = barRouter;
