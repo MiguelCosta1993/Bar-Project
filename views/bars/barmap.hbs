@@ -1,4 +1,5 @@
-<h1>bar map noob</h1>
+<h1> NOOBS ;)</h1>
+
 
 <div id="map-container"></div>
 
@@ -12,15 +13,26 @@
       },
       zoom: 13
     });
-    const latitude = {{ bars.[0].location.coordinates.[0] }};
-    const longitude = {{ bars.[0].location.coordinates.[1] }};
+
+
+    {{!-- const latitude = {{ bars.[0].location.coordinates.[0] }};
+    const longitude = {{ bars.[0].location.coordinates.[1] }}; --}} 
+
+    const bars = {{{ json bars }}};
+    for(let bar of bars){
     const marker = new window.google.maps.Marker({
       map,
+      icon: 'https://i.ibb.co/7KJvLCc/Webp-net-resizeimage-1.png',
+
       position: {
-        lat: latitude,
-        lng: longitude
+        lat: bar.location.coordinates[0],
+        lng: bar.location.coordinates[1]
       }
     });
+    }
+
+
+    
   }
 </script>
 {{>mapscript}}

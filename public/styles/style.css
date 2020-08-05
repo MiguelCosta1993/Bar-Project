@@ -20,7 +20,20 @@ a {
 
 nav {
   display: flex;
+  color: white;
 }
+
+nav img {
+  width: 200px;
+  height: 100px;
+}
+
+.navbar-custom {
+  background-color: black;
+  width: 100% !important;
+}
+
+
 nav a,
 nav button {
   padding: 1em 0;
