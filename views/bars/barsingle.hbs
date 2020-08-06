@@ -5,7 +5,7 @@
     <p><i class="fas fa-glass-martini-alt"></i>    Type of Bar: {{bar.barType}}</p>
     <p><i class="fas fa-map-marker-alt"></i>  Address: {{bar.address}}</p>
     <p><i class="fas fa-star"></i>  Rating:{{bar.rating}}/10</p>
-    <p>Average cost per drink: {{bar.cost}} € </p>
+    <p><i class="fas fa-wallet"></i>  Average cost per drink: {{bar.cost}} € </p>
         </div>
         <div class="mapdiv form-group col-md-6">
       <div id="map-container"></div>
@@ -190,6 +190,7 @@
     const longitude= {{ bar.location.coordinates.[1] }};
     const marker = new window.google.maps.Marker({
       map,
+      icon: 'https://i.ibb.co/7KJvLCc/Webp-net-resizeimage-1.png',
       position: {
         lat: latitude,
         lng: longitude
