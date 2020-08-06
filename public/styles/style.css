@@ -31,6 +31,11 @@ margin-bottom: 10%;
   margin-bottom: 30%;
 }
 
+.sharelink:hover {
+  text-decoration:underline;
+  color:  #d4cfb0;
+}
+
 
 
 a {
