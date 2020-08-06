@@ -2,14 +2,14 @@
         <div class=" singlehead form-group col-md-6">
     <h1>{{bar.name}}</h1>
     <p><img class="listimage" src="{{bar.image}}" alt=""></p>
-    <p>Type of Bar: {{bar.barType}}</p>
-    <p>Address: {{bar.address}}</p>
-    <p>Rating:{{bar.rating}}</p>
+    <p><i class="fas fa-glass-martini-alt"></i>    Type of Bar: {{bar.barType}}</p>
+    <p><i class="fas fa-map-marker-alt"></i>  Address: {{bar.address}}</p>
+    <p><i class="fas fa-star"></i>  Rating:{{bar.rating}}/10</p>
     <p>Average cost per drink: {{bar.cost}} € </p>
         </div>
         <div class="mapdiv form-group col-md-6">
       <div id="map-container"></div>
-      <p style="text-align:left">Description:{{bar.description}}</p>
+      <p style="text-align:left"><i class="fas fa-edit"></i>  Description:{{bar.description}}</p>
         </div>
     </div>
 

@@ -65,6 +65,11 @@ padding-left: 3vw;
   color: white;
 } 
 
+.form-row {
+  margin-bottom: 5%;
+}
+
+
 .navbar-toggler:active{
   outline: 0; 
 }
@@ -175,6 +180,10 @@ textarea {
 
 }
 
+#megamap {
+  margin-bottom: 25%;
+}
+
 #map-container a {
   color:black;
 }
@@ -186,6 +195,10 @@ textarea {
 
 .mapdiv {
   margin-top: 6.5%;
+  margin-bottom: 10%;
+}
+
+.mapdiv p{
   margin-bottom: 10%;
 }
 
@@ -317,3 +330,9 @@ footer a:hover {
   padding-bottom: 0.5%;
   margin-right: 0.5%;
 }
+
+#signup {
+  margin-top: 5%;
+  margin-bottom:20%;
+}
+

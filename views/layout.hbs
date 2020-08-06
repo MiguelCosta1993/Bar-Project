@@ -10,36 +10,36 @@
     <link rel="stylesheet" href="/styles/style.css" />
   </head>
   <body>
-    <nav class="navbar-custom navbar-expand-md mb-4">
+    <nav class="navbar-custom navmenu justify-content-between navbar-expand-md mb-4">
         <div class="container">
-            <a class="navbar-brand" href="/"><img class="logo" src="https://i.ibb.co/ChrTFKb/Untitled.png" alt=""></a>
+            <a class="navbar-brand" href="/"><img class="logo" src="https://i.ibb.co/ChrTFKb/Untitled.png" alt="+"></a>
             <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
+                 <span class="navbar-toggler-icon">☚</span>
             </button>
  
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/bar/barlist">Show Bars</a>
+                        <a class="nav-link scroll-link" href="/bar/barlist"><i class="fas fa-glass-martini-alt"></i>    Show Bars</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/bar/barmap">Show Map</a>
+                        <a class="nav-link scroll-link" href="/bar/barmap"><i class="far fa-map"></i>  Show Map</a>
                     </li>
                      {{#if user}}
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/bar/create">Add a Bar</a>
+                        <a class="nav-link scroll-link" href="/bar/create"><i class="fas fa-plus"></i>  Add a Bar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/profile">User Profile</a>
+                        <a class="nav-link scroll-link" href="/profile"><i class="fas fa-user"></i> User Profile</a>
                     </li>
-                    <li><form action="/authentication/sign-out" method="POST"><button class="nav-link scroll-link" >Sign Out</button></li>
+                    <li><form action="/authentication/sign-out" method="POST"><button class="nav-link scroll-link" ><i class="fas fa-power-off"></i>    Sign Out</button></li>
                      </form>
                     {{else}}
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/authentication/sign-in">Sign In</a>
+                        <a class="nav-link scroll-link" href="/authentication/sign-in"><i class="fas fa-power-off"></i> Sign In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link scroll-link" href="/authentication/sign-up">Sign Up</a>
+                        <a class="nav-link scroll-link" href="/authentication/sign-up"><i class="fas fa-user-edit"></i> Sign Up</a>
                     </li>
                     {{/if}}
                 </ul>
