@@ -25,9 +25,13 @@ flex-direction: column;
 justify-content: center;
 margin: auto;
 margin-bottom: 10%;
-
-
 }
+
+.marginindex {
+  margin-bottom: 30%;
+}
+
+
 
 a {
   color: inherit;
