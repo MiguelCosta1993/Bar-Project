@@ -16,6 +16,8 @@ const upload = multer({ storage });
 
 //BAR CREATE
 barRouter.get('/create', routeGuard, (req, res, next) => {
+  const user = req.session.user;
+  console.log(res.locals.user);
   res.render('bars/create');
 });
 
