@@ -272,6 +272,7 @@ textarea {
 }
 
 
+
 .barlistdiv p {
   text-decoration:underline;
   text-decoration-color: #d4cfb0;
@@ -315,7 +316,9 @@ select{
   outline: none;
   color: #d4cfb0;;
 }
-
+.barlist {
+  margin-bottom: 20%;
+}
 .barlistform {
  
   padding: 3% 0;
