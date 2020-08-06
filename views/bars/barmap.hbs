@@ -178,7 +178,7 @@
     const bars = {{{ json bars }}};
     for(let bar of bars){
 
-    const contentString = '<p>'+ bar.name + '</p>' + '<a href="/bar/barsingle/' + bar._id + '">View Bar</a>' ;
+    const contentString = '<p style="color:black"><strong>'+ bar.name + '</strong></p>' + '<a style="color:black" class="btn btn-warning" href="/bar/barsingle/' + bar._id + '">View Bar</a>' ;
 
     const infowindow = new google.maps.InfoWindow({
     content: contentString

@@ -61,12 +61,20 @@ padding-left: 3vw;
 .custom-toggler.navbar-toggler {
 
   float:right;
-  border-color: rgb(255,102,203);
-  color: rgb(255,102,203);
+  border-color: white;
+  color: white;
 } 
 
 .navbar-toggler:active{
   outline: 0; 
+}
+
+button.navbar-toggler {
+  margin-top: 20px;
+}
+
+span.navbar-toggler-icon {
+  padding-top: 5.5px;
 }
 
 
@@ -165,6 +173,10 @@ textarea {
   margin-right: 5%;
   border: 2px solid black;
 
+}
+
+#map-container a {
+  color:black;
 }
 
 /* single styling */
