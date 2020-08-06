@@ -152,3 +152,14 @@ textarea {
   border: 2px solid black;
 
 }
+
+footer{
+  padding: 2%;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+footer a:hover {
+  color: #f03294;
+}
