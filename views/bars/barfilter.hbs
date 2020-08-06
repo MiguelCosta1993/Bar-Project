@@ -1,16 +1,29 @@
-<h1>Bar List</h1>
+<div class="index">
+  <div class="listhead">
+<h1 style="text-align:center; margin-bottom: 0">Bar List</h1>
+<form class="barlistform" style="text-align:center" action="/bar/barfilter" method="POST">
+  <Label>Filter your bar type:</Label>
+  <select name="barType">
+    <option value="Rooftop-Bar">Rooftop-Bar</option>
+    <option value="Sports-Bar">Sports-Bar</option>
+    <option value="Club-Bar">Club-Bar</option>
+    <option value="Hotel-Bar">Hotel-Bar</option>
+    <option value="Cocktail-Bar">Cocktail-Bar</option>
+    <option value="Plastic-Bar">Plastic-Bar</option>
+  </select>
+  <button class="listbutton">Search</button>
+</form>
+<p style= "text-align: center"><a href="create"><button class="barlistbutton">Add a new bar</button></a></p>
+</div>
  {{#each bars}}
- <div>
+ <div class="card barlistdiv">
  <a href="barsingle/{{id}}">
     <h3>{{name}}</h3>
-    <p><img src="{{image}}" alt=""></p>
-    <p>Type of Bar: {{barType}}</p>
-    <p>Address: {{address}}</p>
-    <p>Rating:{{rating}}</p>
-    <p>Description:{{description}}</p> 
+    <p><img class="listimage" style="border:1px solid black" src="{{image}}" alt=""></p>
     <p>Average cost per drink: {{cost}} € </p></a>
- </div>
- {{/each}}
+    <p>Type of Bar: {{barType}}</p>
+    <p>Rating:{{rating}}</p>
+      </div>
+    {{/each}}
+  </div>
    
-   
-<p style= "text-align: center"><a href="create"><button>Add a new bar</button></a></p>
