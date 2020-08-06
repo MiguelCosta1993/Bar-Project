@@ -1,6 +1,7 @@
 <div class="index">
-<form action="/bar/barfilter" method="POST">
-  <Label>Type of Bar</Label>
+<h1 style="text-align:center">Bar List</h1>
+<form style="text-align:center" action="/bar/barfilter" method="POST">
+  <Label>Filter your bar type:</Label>
   <select name="barType">
     <option value="Rooftop-Bar">Rooftop-Bar</option>
     <option value="Sports-Bar">Sports-Bar</option>
@@ -11,20 +12,17 @@
   </select>
   <button>Search</button>
 </form>
-
-<h1>Bar List</h1>
  {{#each bars}}
- <div>
+ <div class="card barlistdiv">
  <a href="barsingle/{{id}}">
     <h3>{{name}}</h3>
     <p><img src="{{image}}" alt=""></p>
+     <p>Rating:{{rating}}</p>
     <p>Type of Bar: {{barType}}</p>
-    <p>Address: {{address}}</p>
-    <p>Rating:{{rating}}</p>
-    <p>Description:{{description}}</p> 
     <p>Average cost per drink: {{cost}} € </p></a>
- </div>
- {{/each}}
+
+      </div>
+    {{/each}}
   </div>
    
    
