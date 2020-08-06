@@ -206,6 +206,10 @@ textarea {
   width: 100%;
 }
 
+.creators {
+  margin-bottom: 30%
+}
+
 .singlehead img {
   margin: auto;
   max-width: 700px;
