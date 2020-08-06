@@ -223,6 +223,10 @@ textarea {
 }
 
 
+.signinanchor:hover {
+  color: #d4cfb0;
+  text-decoration: underline;
+}
 
 .barsinglediv p {
   text-decoration-color: #d4cfb0;
