@@ -5,14 +5,24 @@ const { Router } = require('express');
 const bcryptjs = require('bcryptjs');
 const User = require('./../models/user');
 
+const multer = require('multer');
+const cloudinary = require('cloudinary');
+const multerStorageCloudinary = require('multer-storage-cloudinary');
+
+const storage = new multerStorageCloudinary.CloudinaryStorage({
+  cloudinary: cloudinary.v2
+});
+const upload = multer({ storage });
+
 const router = new Router();
 
 router.get('/sign-up', (req, res, next) => {
   res.render('authentication/sign-up');
 });
 
-router.post('/sign-up', (req, res, next) => {
-  const { name, email, password,bio, adminCode, image } = req.body;
+router.post('/sign-up', upload.single('image'), (req, res, next) => {
+  const { name, email, password, bio, adminCode } = req.body;
+  const image = req.file.path;
   const adminMatch = process.env.ADMIN_CODE;
 
   let isAdmin = false;
