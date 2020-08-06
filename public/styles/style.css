@@ -25,9 +25,13 @@ flex-direction: column;
 justify-content: center;
 margin: auto;
 margin-bottom: 10%;
-
-
 }
+
+.marginindex {
+  margin-bottom: 30%;
+}
+
+
 
 a {
   color: inherit;
@@ -206,6 +210,10 @@ textarea {
   width: 100%;
 }
 
+.creators {
+  margin-bottom: 30%
+}
+
 .singlehead img {
   margin: auto;
   max-width: 700px;
@@ -268,6 +276,7 @@ textarea {
 }
 
 
+
 .barlistdiv p {
   text-decoration:underline;
   text-decoration-color: #d4cfb0;
@@ -311,7 +320,9 @@ select{
   outline: none;
   color: #d4cfb0;;
 }
-
+.barlist {
+  margin-bottom: 20%;
+}
 .barlistform {
  
   padding: 3% 0;
