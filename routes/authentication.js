@@ -12,7 +12,7 @@ router.get('/sign-up', (req, res, next) => {
 });
 
 router.post('/sign-up', (req, res, next) => {
-  const { name, email, password, adminCode, image } = req.body;
+  const { name, email, password,bio, adminCode, image } = req.body;
   const adminMatch = process.env.ADMIN_CODE;
 
   let isAdmin = false;
@@ -27,6 +27,7 @@ router.post('/sign-up', (req, res, next) => {
       return User.create({
         name,
         email,
+        bio,
         passwordHash: hash,
         isAdmin,
         image
