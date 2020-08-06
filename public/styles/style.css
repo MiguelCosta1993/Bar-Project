@@ -137,6 +137,10 @@ p:not(:last-child) {
 
 }
 
+.profilepic {
+  width: 350px;
+  height: 350px;
+}
 /* creation forms */
 .createbar {
   display: flex;
