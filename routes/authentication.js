@@ -11,14 +11,15 @@ router.get('/sign-up', (req, res, next) => {
   res.render('authentication/sign-up');
 });
 
-
 router.post('/sign-up', (req, res, next) => {
-  const { name, email, password, adminCode } = req.body;
-  
+  const { name, email, password, adminCode, image } = req.body;
+  const adminMatch = process.env.ADMIN_CODE;
+
   let isAdmin = false;
-  if (adminCode === "1234") {
+  if (adminCode === adminMatch) {
     isAdmin = true;
   }
+  console.log(isAdmin);
 
   bcryptjs
     .hash(password, 10)
@@ -27,7 +28,8 @@ router.post('/sign-up', (req, res, next) => {
         name,
         email,
         passwordHash: hash,
-        isAdmin
+        isAdmin,
+        image
       });
     })
     .then(user => {
