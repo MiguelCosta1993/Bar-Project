@@ -174,21 +174,26 @@
             }
           ]
     });
-
-
-    {{!-- const latitude = {{ bars.[0].location.coordinates.[0] }};
-    const longitude = {{ bars.[0].location.coordinates.[1] }}; --}} 
-
+  
     const bars = {{{ json bars }}};
     for(let bar of bars){
+
+    const contentString = '<p>'+ bar.name + '</p>' + '<a href="/bar/barsingle/' + bar._id + '">View Bar</a>' ;
+
+    const infowindow = new google.maps.InfoWindow({
+    content: contentString
+    });
     const marker = new window.google.maps.Marker({
-      map,
+      map: map,
       icon: 'https://i.ibb.co/7KJvLCc/Webp-net-resizeimage-1.png',
 
       position: {
         lat: bar.location.coordinates[0],
         lng: bar.location.coordinates[1]
       }
+    });
+    marker.addListener('click', function() {
+    infowindow.open(map, marker);
     });
     }
 
