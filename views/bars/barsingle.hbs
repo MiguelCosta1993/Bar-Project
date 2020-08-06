@@ -6,7 +6,7 @@
     <p><i class="fas fa-map-marker-alt"></i>  Address: {{bar.address}}</p>
     <p><i class="fas fa-star"></i>  Rating:{{bar.rating}}/10</p>
     <p><i class="fas fa-wallet"></i>  Average cost per drink: {{bar.cost}} € </p>
-    <p><a class="sharelink" href="https://api.whatsapp.com/send?text=Meet%20me%20at%20this%20cool%20bar%20called{{bar.name}}%20on%20the%20https://www.google.com/search?q={{bar.location.coordinates[0],{{bar.location.coordinates[1]}}}}!" id="whatsapp-share-btn" rel="nofollow" target="_blank"><i class="fab fa-whatsapp"></i>   Share this Bar via WhatsApp</a></p>
+    <p><a class="sharelink" href="https://api.whatsapp.com/send?text=Meet%20me%20at%20this%20cool%20bar%20called%20{{bar.name}}%20on%20the%20https://www.google.com/search?q={{bar.location.coordinates.[0]}},{{bar.location.coordinates.[1]}}!" id="whatsapp-share-btn" rel="nofollow" target="_blank"><i class="fab fa-whatsapp"></i>   Share this Bar via WhatsApp</a></p>
         </div>
         <div class="mapdiv form-group col-md-6">
       <div id="map-container"></div>
