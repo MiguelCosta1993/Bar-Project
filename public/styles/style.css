@@ -2,6 +2,7 @@
 *:before,
 *:after {
   box-sizing: border-box;
+
 }
 
 body {
@@ -57,6 +58,8 @@ flex-direction: column;
 justify-content: center;
 margin: auto;
 margin-bottom: 10%;
+font-family: 'Ubuntu Condensed', sans-serif;
+
 }
 
 .marginindex {
@@ -78,6 +81,8 @@ a {
 nav {
   display: flex;
   color: white;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
   
 
 }
@@ -101,6 +106,10 @@ padding-left: 3vw;
   text-decoration:none;
   color: #d4cfb0;
 
+}
+
+.barfiltermargin {
+  margin-bottom: 25%;
 }
 
 .custom-toggler.navbar-toggler {
@@ -185,6 +194,8 @@ p:not(:last-child) {
 
 .mapheader {
   text-align:center;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
 }
 
 
@@ -226,6 +237,7 @@ textarea {
   margin-left: 5%;
   margin-right: 5%;
   border: 2px solid black;
+  
 
 }
 
@@ -245,6 +257,7 @@ textarea {
 .mapdiv {
   margin-top: 6.5%;
   margin-bottom: 10%;
+  
 }
 
 .mapdiv p{
@@ -263,6 +276,7 @@ textarea {
   margin: auto;
   max-width: 700px;
   border: 2px solid black;
+  
 }
 
 .singlehead h1,p  {
@@ -275,6 +289,12 @@ textarea {
   background-color:rgba(20, 20, 20, 0.473);
   border:none;
   padding: 2%;
+  
+
+}
+
+.barsingle {
+  font-family: 'Ubuntu Condensed', sans-serif;
 
 }
 
@@ -380,6 +400,8 @@ footer{
   text-align: center;
   color: white;
   background-color: black;
+  font-family: 'Ubuntu Condensed', sans-serif;
+
 
 }
 
