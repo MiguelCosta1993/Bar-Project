@@ -1,5 +1,5 @@
 <div class="barlist index">
-  <div class="listhead">
+  <div class="fade-in listhead">
 <h1 style="text-align:center; margin-bottom: 0">Bar List</h1>
 <form class="barlistform" style="text-align:center" action="/bar/barfilter" method="POST">
   <Label>Filter your bar type:</Label>
@@ -16,7 +16,7 @@
 <p style= "text-align: center"><a href="create"><button class="barlistbutton"><i class="fas fa-plus"></i> Add a new bar</button></a></p>
 </div>
  {{#each bars}}
- <div class="card barlistdiv">
+ <div class="fade-in card barlistdiv">
  <a href="barsingle/{{id}}">
     <h3>{{name}}</h3>
     <p><img class="listimage" style="border:1px solid black" src="{{image}}" alt=""></p>
