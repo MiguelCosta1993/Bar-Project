@@ -2,8 +2,9 @@
 <h1>{{user.name}}</h1>
 <img class="profilepic" src="{{user.image}}" alt=""></p>
 <hr>
-<span><strong>Bio</strong>: {{user.bio}}</span></p>
+<span style="text-align: center"><strong>Bio</strong>:<br>{{user.bio}}</span></p>
 <span><strong>Email</strong>: {{user.email}}</span>
-<a href="/profile/edit">Edit your profile</a>
+{{!-- <button class="editprofile barlistbutton"></button> --}}
+<a class="editprofile" href="/profile/edit">Edit your profile</a>
 <br>
 </div>

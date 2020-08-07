@@ -91,13 +91,17 @@ padding-left: 3vw;
   /* height: 10vh; */
 }
 
+.editprofile {
+  border: 0.1px solid #d4cfb0;
+  padding: 2%;
+  margin-top: 2%;
+}
 
-/* .navbarlinks {
-  display:flex;
-  flex-direction: row;
-  justify-content:space-evenly;
-  padding: 2vh;
-} */
+.editprofile:hover{
+  text-decoration:none;
+  color: #d4cfb0;
+
+}
 
 .custom-toggler.navbar-toggler {
 
