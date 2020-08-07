@@ -18,7 +18,7 @@ profileRouter.post('/edit', routeGuard, (req, res, next) => {
 
   User.findByIdAndUpdate(id, { name, email, image, bio })
     .then(() => {
-      res.redirect('profile/display');
+      res.redirect('/profile/display');
     })
     .catch(error => {
       next(error);
