@@ -4,6 +4,7 @@ const routeGuard = require('./../middleware/route-guard');
 const multer = require('multer');
 const cloudinary = require('cloudinary');
 const multerStorageCloudinary = require('multer-storage-cloudinary');
+const { request } = require('express');
 
 const storage = new multerStorageCloudinary.CloudinaryStorage({
   cloudinary: cloudinary.v2
@@ -28,10 +29,15 @@ profileRouter.post(
   (req, res, next) => {
     const id = req.session.user;
     const { name, email, bio } = req.body;
-    const image = req.file.path;
-    console.log(id);
+    let data;
+    if (req.file) {
+      const image = req.file.path;
+      data = { name, email, image, bio };
+    } else {
+      data = { name, email, bio };
+    }
 
-    User.findByIdAndUpdate(id, { name, email, image, bio })
+    User.findByIdAndUpdate(id, data)
       .then(() => {
         res.redirect('/profile/display');
       })
